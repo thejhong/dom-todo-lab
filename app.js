@@ -1,20 +1,28 @@
-//Cached elements
 
-const enterToDO = document.getElementById("enter-todo")
-const submitButton = document.getElementById("submit-button")
-const todoList = document.getElementById("todo-list")
+//Constants-------------------------------------/
 
-//Event listeners
 
-submitButton.addEventListener('click', function(evt){
-  if(enterToDO.value === '') return
-  const  newToDo = document.createElement('Li')
-  newToDo.textContent = todoInput.value
-  todoList.appendChild(newTodo)
-  enterToDO.value = ''
-})
+//Variables-------------------------------------/
 
-todoList.addEventListener('click', function(evt){
-const parentNode = event.target.pareentNode
-parentNode.removeChild(event.target)
-})
+
+//Cached elements-------------------------------/
+const input = document.querySelector('input')
+const submitBtn = document.querySelector('#submit-button')
+const list = document.querySelector('#todo-list')
+
+
+//Event listeners-------------------------------/
+submitBtn.addEventListener('click', userClick)
+
+
+//Functions-------------------------------------/
+function userClick(evt) {
+    if (input.value !== "") {
+        const item = document.createElement('li')
+        item.textContent = input.value
+        list.appendChild(item)
+        input.value = ""
+    } else {
+        return
+    } 
+}
